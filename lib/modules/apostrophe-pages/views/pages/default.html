@@ -1,6 +1,21 @@
 {% extends "layout.html" %}
 
 {% block beforeMain %}
+<header>
+{# For any tabs available on children of homePage #}
+<ul class="tabs">
+  {% for tab in data.home._children %}
+    <li class="
+      {% if data.page and
+        (apos.pages.isAncestorOf(tab, data.page) or tab._id == data.page._id)
+      %}
+        current
+      {% endif %}
+    "><a href="{{ tab._url }}">{{ tab.title }}</a></li>
+  {% endfor %}
+</ul>
+</header>
+</header>
   <div class="block hero">
     <div class="inner">
       <div class="hero-text">
