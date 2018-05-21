@@ -11,11 +11,15 @@
 {% endblock %}
 
 {% block main %}
-  {#
-    Usually, your page templates in the apostrophe-pages module will override
-    this block. It is safe to assume this is where your page-specific content
-    should go.
-  #}
+  <div class="main-content">
+  {{ apos.area(data.page, 'newBody', 'apostrophe-rich-text',  { 
+    toolbar : ['Styles' , 'Bold' , 'Italic'],
+    styles : [
+      {name : 'Title' , element : 'h1'},
+      {name : 'Description' , element : 'p'}
+    ]
+   }) }}
+  </div>
 {% endblock %}
 
 {% block afterMain %}
