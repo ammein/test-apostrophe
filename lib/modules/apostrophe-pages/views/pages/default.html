@@ -5,13 +5,15 @@
 {# For any tabs available on children of homePage #}
 <ul class="tabs">
   {% for tab in data.home._children %}
-    <li class="
-      {% if data.page and
-        (apos.pages.isAncestorOf(tab, data.page) or tab._id == data.page._id)
-      %}
-        current
+    <li><a href="{{ tab._url }}">{{ tab.title }}</a>
+      {% if tab._children.length %}
+        <ul>
+          {% for child in tab._children %}
+            <li><a href="{{ child._url }}">{{ child.title }}</a></li>
+          {% endfor %}
+        </ul>
       {% endif %}
-    "><a href="{{ tab._url }}">{{ tab.title }}</a></li>
+    </li>
   {% endfor %}
 </ul>
 </header>
