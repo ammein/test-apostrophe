@@ -29,12 +29,11 @@
 
 {% block main %}
   <div class="main-content">
-  {{ apos.area(data.page, 'newBody', 'apostrophe-rich-text',  { 
-    toolbar : ['Styles' , 'Bold' , 'Italic'],
-    styles : [
-      {name : 'Title' , element : 'h1'},
-      {name : 'Description' , element : 'p'}
-    ]
+  {{ apos.area(data.page, 'newBody', { 
+      widgets : {
+        link : {},
+        'page-link' : {}
+      }
    }) }}
   </div>
 {% endblock %}
