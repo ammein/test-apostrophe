@@ -27,6 +27,7 @@ var apos = require('apostrophe')({
 
       'link-widgets' : {},
       'page-link-widgets' : {},
+      'drawer-widgets' : {},
 
     // Apostrophe module configuration
 
