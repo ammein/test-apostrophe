@@ -1,0 +1,7 @@
+{# in lib/modules/drawer-widgets/views/widget.html #}
+<!-- First widget that name : 'title' -->
+<h4><a data-drawer-title class="drawer-title" href="#">{{ data.widget.title }}</a></h4>
+<!-- Second widget that name : 'content' -->
+<div data-drawer class="drawer-body">
+  {{ apos.area(data.widget, 'content', { edit: false }) }}
+</div>
