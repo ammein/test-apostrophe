@@ -30,6 +30,19 @@ var apos = require('apostrophe')({
       'drawer-widgets' : {},
       'two-column-widgets' : {},
       'people' : {},
+      'people-widgets' : {
+        extend : 'apostrophe-pieces-widgets',
+        filters : {
+          projection : {
+            slug : 1,
+            title : 1,
+            type : 1,
+            tags : 1,
+            phone : 1,
+            thumbnail : 1
+          }
+        }
+      },
 
     // Apostrophe module configuration
 
