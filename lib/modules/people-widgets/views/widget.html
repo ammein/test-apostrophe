@@ -1,0 +1,24 @@
+{% for piece in data.widget._pieces %}
+{# Make it as piece from data.widget (MUST GET _pieces to fetch ALL , this is how we do it ;) #}
+  <h4>
+    {% if piece._url %}<a href="{{ piece._url }}">{% endif %}
+    {{ piece.title }}
+    {% if piece._url %}</a>{% endif %}
+    {% if piece.phone %}
+      <a href="tel:{{ piece.phone }}">
+        {{ piece.phone }}
+      </a>
+    {% endif %}
+    {{
+      apos.singleton(
+        piece,
+        'thumbnail',
+        'apostrophe-images',
+        {
+          edit: false,
+          size: 'one-sixth'
+        }
+      )
+    }}
+  </h4>
+{% endfor %}
