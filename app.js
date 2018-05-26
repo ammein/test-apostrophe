@@ -21,14 +21,30 @@ var apos = require('apostrophe')({
           },
           // We usually want children of the current page, too
           children: true
-        }
+        },
         // other apostrophe-pages options like `types` ...
+        types :[
+          {
+            name : 'home',
+            label : 'Home'
+          },
+          {
+            name : 'default',
+            label : 'Default'
+          },
+          // Our new page for displaying people
+          {
+            name : 'people-page',
+            label : 'People'
+          }
+        ]
       },
 
       'link-widgets' : {},
       'page-link-widgets' : {},
       'drawer-widgets' : {},
       'two-column-widgets' : {},
+      // Begin Pieces of people
       'people' : {},
       'people-widgets' : {
         extend : 'apostrophe-pieces-widgets',
@@ -43,6 +59,10 @@ var apos = require('apostrophe')({
           }
         }
       },
+      'people-pages' : {
+        extend : 'apostrophe-pieces-pages'
+      },
+      // End Pieces of people
 
     // Apostrophe module configuration
 
