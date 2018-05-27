@@ -23,21 +23,6 @@ var apos = require('apostrophe')({
           children: true
         },
         // other apostrophe-pages options like `types` ...
-        types :[
-          {
-            name : 'home',
-            label : 'Home'
-          },
-          {
-            name : 'default',
-            label : 'Default'
-          },
-          // Our new page for displaying people
-          {
-            name : 'people-page',
-            label : 'People'
-          }
-        ]
       },
 
       'link-widgets' : {},
