@@ -23,6 +23,12 @@ var apos = require('apostrophe')({
           children: true
         },
         // other apostrophe-pages options like `types` ...
+        types : [
+          {
+            name: 'people-page',
+            label: 'People'
+          }
+        ]
       },
 
       'link-widgets' : {},
