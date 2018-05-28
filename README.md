@@ -1,7 +1,4 @@
-# My issue is until Pieces and Pieces Pages
-
-## Below is my code for the issue on **construct : function** section.
-![Bugs](./bugs/title-automatically.PNG)
+# ISSUE FIXED
 ```javascript
 module.exports = {
     extend: 'apostrophe-pieces',
@@ -16,7 +13,7 @@ module.exports = {
                 name: 'firstName',
                 label: 'First Name',
                 type: 'string',
-                required: true
+                required: true,
             },
             {
                 name: 'lastName',
@@ -28,7 +25,15 @@ module.exports = {
                 name: 'title',
                 label: 'Full Name',
                 type: 'string',
-                required: true
+                required: true,
+                contextual : true
+            },
+            {
+                name: 'slug',
+                label: 'Slug',
+                type: 'string',
+                required: true,
+                contextual: true
             },
             {
                 name: 'body',
@@ -79,7 +84,11 @@ module.exports = {
     ],
     construct: function(self, options) {
         self.beforeSave = function(req, piece, options, callback) {
-            console.log("Omit :",piece);
+            // Override title and MUST SET CONTEXTUAL to able to save. Let the 
+            // backend self.beforeSave method do this thing.
+            // You know why I don't set piece.slug ?
+            // Because once you already set title , apostrophe made it for you :)
+            // BUT must put contextual : true on slug. If not, it will prompt you :*
             piece.title = piece.firstName + ' ' + piece.lastName;
             return callback();
         }
