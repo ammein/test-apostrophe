@@ -10,26 +10,7 @@ var apos = require('apostrophe')({
   modules: {
 
     // This one is for children of link pages
-      'apostrophe-pages': {
-        filters: {
-          // Grab our ancestor pages, with two levels of subpages
-          ancestors: {
-            children: {
-              // Set depth to 2 for looking deep subpages of children
-              depth: 2
-            }
-          },
-          // We usually want children of the current page, too
-          children: true
-        },
-        // other apostrophe-pages options like `types` ...
-        types : [
-          {
-            name: 'people-page',
-            label: 'People'
-          }
-        ]
-      },
+      'apostrophe-pages': {},
 
       'link-widgets' : {},
       'page-link-widgets' : {},
