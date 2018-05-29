@@ -5,6 +5,10 @@
   <div class="container">
     {% for piece in data.pieces %}
       <h4>
+      {# 
+      apos.images.first helps to find an image ,
+      You could also use apos.images.all to fetch an array
+       #}
         {% set image = apos.images.first(piece.thumbnail) %}
         {% if image %}
           <img src="{{ apos.attachments.url(image, { size: 'one-sixth' }) }}" />
