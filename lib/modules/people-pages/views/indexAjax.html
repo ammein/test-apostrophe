@@ -1,6 +1,4 @@
 {# indexAjax.html does not extend anything ! #}
-{# Link to all the tags, adding a parameter to the query string #}
-<!--
 <ul class="tag-filters">
   {% for tag in data.piecesFilters.tags %}
     <li><a href="{{ data._url | build({ tags: tag.value }) }}">{{ tag.label }}</a></li>
@@ -13,13 +11,13 @@
     <th>Pics</th>
     </tr>
     </thead>
+    <tbody data-apos-ajax-append>    
 {% for piece in data.pieces %}
-
+    {{ apos.log(piece) }}
     {# 
     apos.images.first helps to find an image ,
     You could also use apos.images.all to fetch an array
     #}
-    <tbody>
     <tr>
     <td>
     <a href="{{ piece._url }}">{{ piece.title }}</a>    
@@ -34,5 +32,10 @@
 {% endfor %}
     </tbody>
     </table>
-{% import 'apostrophe-pager:macros.html' as pager with context %}
-{{ pager.render({ page: data.currentPage, total: data.totalPages }, data.url) }} -->
+    {% if data.currentPage < data.totalPages %}
+    {# Load More Button with "append=1" flag #}
+    <a href="{{ data.url | build({ page: data.currentPage + 1, append: 1 }) }}">Load More...</a>
+    {% endif %}
+    {{ apos.log(data.url | build({ page: data.currentPage + 1, append: 1 })) }}
+{# {% import 'apostrophe-pager:macros.html' as pager with context %}
+{{ pager.render({ page: data.currentPage, total: data.totalPages }, data.url) }} #}
