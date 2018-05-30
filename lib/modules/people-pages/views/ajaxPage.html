@@ -1,0 +1,31 @@
+{# indexAjax.html does not extend anything ! #}
+    <table class="blueTable">
+    <thead>
+    <tr>
+    <th>List of People</th>
+    <th>Pics</th>
+    </tr>
+    </thead>
+{% for piece in data.pieces %}
+
+    {# 
+    apos.images.first helps to find an image ,
+    You could also use apos.images.all to fetch an array
+    #}
+    <tbody>
+    <tr>
+    <td>
+    <a href="{{ piece._url }}">{{ piece.title }}</a>    
+    </td>
+    <td>    
+    {% set image = apos.images.first(piece.thumbnail) %}
+    {% if image %}
+        <img src="{{ apos.attachments.url(image, { size: 'one-sixth' }) }}" />
+    {% endif %}
+    </td>
+    </tr>
+{% endfor %}
+    </tbody>
+    </table>
+{% import 'apostrophe-pager:macros.html' as pager with context %}
+{{ pager.render({ page: data.currentPage, total: data.totalPages }, data.url) }}

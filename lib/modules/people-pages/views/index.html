@@ -3,20 +3,9 @@
 
 {% block main %}
   <div class="container">
-    {% for piece in data.pieces %}
-      <h4>
-      {# 
-      apos.images.first helps to find an image ,
-      You could also use apos.images.all to fetch an array
-       #}
-        {% set image = apos.images.first(piece.thumbnail) %}
-        {% if image %}
-          <img src="{{ apos.attachments.url(image, { size: 'one-sixth' }) }}" />
-        {% endif %}
-        <a href="{{ piece._url }}">{{ piece.title }}</a>
-      </h4>
-    {% endfor %}
-    {% import 'apostrophe-pager:macros.html' as pager with context %}
-    {{ pager.render({ page: data.currentPage, total: data.totalPages }, data.url) }}
+  <h2 class="name-title">People</h2>
+  <div data-apos-ajax-context="people">
+      {% include "ajaxPage.html" %}
+  </div>
   </div>
 {% endblock %}
