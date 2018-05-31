@@ -13,6 +13,8 @@
         current
       {% endif %}
     "><a href="{{ tab._url }}">{{ tab.title }}</a></li>
+    {{ apos.log("This is for tab :" , tab) }}
+    {{ apos.log("This is for data :" , data) }}
   {% endfor %}
 </ul>
 </header>
