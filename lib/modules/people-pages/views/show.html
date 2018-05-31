@@ -1,0 +1,14 @@
+{# in lib/modules/people-pages/views/show.html #}
+{% extends "layout.html" %}
+{% block title %}{{ data.piece.title }}{% endblock %}
+
+{% block main %}
+<div class="container">
+    <h2>{{ data.piece.title }}</h2>
+    <div>
+    {{ apos.singleton(data.piece, 'thumbnail', 'apostrophe-images') }}
+    </div>
+    
+    {{ apos.area(data.piece, 'body') }}
+</div>
+{% endblock %}

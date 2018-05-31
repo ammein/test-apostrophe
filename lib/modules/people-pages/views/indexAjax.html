@@ -1,8 +1,13 @@
 {# indexAjax.html does not extend anything ! #}
 <ul class="tag-filters">
-  {% for tag in data.piecesFilters.tags %}
-    <li><a href="{{ data._url | build({ tags: tag.value }) }}">{{ tag.label }}</a></li>
-  {% endfor %}
+
+  {% if data.piecesFilters.tags %}
+    {% for tag in data.piecesFilters.tags %}
+        <li><a href="{{ data._url | build({ tags: tag.value }) }}">{{ tag.label }}</a></li>
+    {% endfor %}
+    {% else %}
+        Tags empty
+  {% endif %}
 </ul>
     <table class="blueTable">
     <thead>
@@ -13,7 +18,7 @@
     </thead>
     <tbody data-apos-ajax-append>    
 {% for piece in data.pieces %}
-    {{ apos.log(piece) }}
+    {# {{ apos.log(piece) }} #}
     {# 
     apos.images.first helps to find an image ,
     You could also use apos.images.all to fetch an array
