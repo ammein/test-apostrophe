@@ -32,7 +32,21 @@ var apos = require('apostrophe')({
         }
       },
       'people-pages' : {
-        extend : 'apostrophe-pieces-pages'
+        extend : 'apostrophe-pieces-pages',
+        // construct: function (self, options) {
+        //   return self.apos.docs.getManager('person').find({
+        //     reputation: {
+        //       $gte: 30
+        //     }
+        //   }).toArray(function (err, people) {
+        //     console.log("List of peoples \n",people);
+        //   });
+        // },
+        piecesFilters : [
+          {
+            name : 'tags',
+          }
+        ]
       },
       // End Pieces of people
 
