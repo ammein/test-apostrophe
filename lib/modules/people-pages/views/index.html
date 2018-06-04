@@ -4,8 +4,24 @@
 {% block main %}
   <div class="container">
   <h2 class="name-title">People</h2>
+  <ul class="tag-filters">
+  {% if data.piecesFilters.tags %}
+    {% for tag in data.piecesFilters.tags %}
+    {{ apos.log(tag) }}    
+        <li><a href="{{ data.url | build({ tags: tag.value }) }}">{{ tag.label }}</a></li>
+    {% endfor %}
+    {% else %}
+        Tags empty
+  {% endif %}
+  </ul>
   <div data-apos-ajax-context="people">
       {% include "indexAjax.html" %}
   </div>
   </div>
+{% endblock %}
+
+{% block afterMain %}
+  <script>
+  ga.somethingLikeThis({{ apos.settings.getOption('analyticsId') | json}})
+  </script>
 {% endblock %}

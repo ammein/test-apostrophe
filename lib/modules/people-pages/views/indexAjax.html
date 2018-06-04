@@ -1,14 +1,4 @@
 {# indexAjax.html does not extend anything ! #}
-<ul class="tag-filters">
-  {% if data.piecesFilters.tags %}
-    {% for tag in data.piecesFilters.tags %}
-    {{ apos.log(tag) }}    
-        <li><a href="{{ data._url | build({ tags: tag.value }) }}">{{ tag.label }}</a></li>
-    {% endfor %}
-    {% else %}
-        Tags empty
-  {% endif %}
-</ul>
     <table class="blueTable">
     <thead>
     <tr>

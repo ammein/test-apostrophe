@@ -49,6 +49,12 @@ var apos = require('apostrophe')({
         ]
       },
       // End Pieces of people
+      settings: {
+        // So we can write `apos.settings` in a template
+        alias: 'settings',
+        // Let's pass in a Google Analytics id, just as an example
+        analyticsId: 'UA-XYZPDQ'
+      },
 
     // Apostrophe module configuration
 
