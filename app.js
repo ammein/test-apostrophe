@@ -55,6 +55,7 @@ var apos = require('apostrophe')({
         // Let's pass in a Google Analytics id, just as an example
         analyticsId: 'UA-XYZPDQ'
       },
+      'apostrophe-users' : {},
 
     // Apostrophe module configuration
 
