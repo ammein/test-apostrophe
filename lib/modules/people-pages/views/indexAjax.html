@@ -30,6 +30,7 @@
     {% if data.currentPage < data.totalPages %}
     {# Load More Button with "append=1" flag #}
     <a data-apos-ajax-infinite-scroll href="{{ data.url | build({ page: data.currentPage + 1, append: 1 }) }}">Load More...</a>
+    {# {{ apos.log((data.url | build({page : data.currentPage + 1 , append : 1 }))) }} #}
     {% endif %}
     {# {{ apos.log(data.url | build({ page: data.currentPage + 1, append: 1 })) }} #}
 {# {% import 'apostrophe-pager:macros.html' as pager with context %}

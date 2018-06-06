@@ -48,6 +48,17 @@ var apos = require('apostrophe')({
           }
         ]
       },
+      'default-pages' :{
+        extend : 'apostrophe-custom-pages',
+        name : 'default',
+        addFields : [
+          {
+            name : 'vendor',
+            type : 'string',
+            label : 'Vendor'
+          }
+        ]
+      },
       // End Pieces of people
       settings: {
         // So we can write `apos.settings` in a template
