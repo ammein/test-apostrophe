@@ -67,6 +67,8 @@ var apos = require('apostrophe')({
         analyticsId: 'UA-XYZPDQ'
       },
       'apostrophe-users' : {},
+      // include my own-theme-module (MUST CALL , I don't know why)
+      'my-theme' : {},
 
     // Apostrophe module configuration
 
