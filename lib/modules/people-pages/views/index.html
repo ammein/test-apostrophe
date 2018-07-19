@@ -8,7 +8,11 @@
   {% if data.piecesFilters.tags %}
     {% for tag in data.piecesFilters.tags %}
     {{ apos.log(tag) }}    
-        <li><a href="{{ data.url | build({ tags: tag.value }) }}">{{ tag.label }}</a></li>
+        <li><a href="{{ data.url | build({ tags: tag.value }) }}">#{{ tag.label }}</a></li>
+    {% endfor %}
+    {% for fullName in data.piecesFilters.title %}
+    {{ apos.log("Build Title",build({ fullName: fullName.value })) }}    
+        <li><a href="{{ data.url | build({ tags: fullName.value }) }}">{{ fullName.label }}</a></li>
     {% endfor %}
     {% else %}
         Tags empty
