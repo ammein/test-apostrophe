@@ -7,13 +7,15 @@
   <ul class="tag-filters">
   {% if data.piecesFilters.tags %}
     {% for tag in data.piecesFilters.tags %}
-    {{ apos.log(tag) }}    
-        <li><a href="{{ data.url | build({ tags: tag.value }) }}">#{{ tag.label }}</a></li>
+    {{ apos.log(data.query) }}    
+        <li><a class="{{'current' if data.query.tags == tag.value}}" href="{{ data.url | build({ tags: tag.value }) }}">#{{ tag.label }}</a></li>
     {% endfor %}
-    {% for fullName in data.piecesFilters.title %}
-    {{ apos.log("Build Title",build({ fullName: fullName.value })) }}    
-        <li><a href="{{ data.url | build({ tags: fullName.value }) }}">{{ fullName.label }}</a></li>
-    {% endfor %}
+    {% if data.piecesFilters.title %}
+        <h1>List of People</h1>         
+        {% for fullName in data.piecesFilters.title %}  
+            <li><a href="{{ data.url | build({ search: fullName.value }) }}">{{ fullName.label }}</a></li>
+        {% endfor %}
+    {% endif %}
     {% else %}
         Tags empty
   {% endif %}
