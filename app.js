@@ -16,6 +16,21 @@ var apos = require('apostrophe')({
           exceptions : ['/my-post-route']
         }
       },
+      'apostrophe-workflow' :{
+        alias : 'workflow'
+      },
+      'apostrophe-admin-bar' :{
+        addGroups : [{
+          label : 'Admin',
+          items :['apostrophe-users' , 'apostrophe-groups']
+        },{
+          label : 'Attachments',
+          items : ['apostrophe-images' , 'apostrophe-files']
+        },{
+          label : 'Pieces',
+          items : ['contact-form','people']
+        }]
+      },
       'contact-form' : {},
       'contact-form-widgets' : {},
       'link-widgets' : {},
@@ -39,15 +54,6 @@ var apos = require('apostrophe')({
       },
       'people-pages' : {
         extend : 'apostrophe-pieces-pages',
-        // construct: function (self, options) {
-        //   return self.apos.docs.getManager('person').find({
-        //     reputation: {
-        //       $gte: 30
-        //     }
-        //   }).toArray(function (err, people) {
-        //     console.log("List of peoples \n",people);
-        //   });
-        // },
         piecesFilters : [
           {
             name : 'tags',

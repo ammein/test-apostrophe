@@ -14,6 +14,7 @@
   "license": "MIT",
   "dependencies": {
     "apostrophe": "^2.60.4",
+    "apostrophe-workflow": "^2.10.2",
     "async": "^2.6.1"
   }
 }
