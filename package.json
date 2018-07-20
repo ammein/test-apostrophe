@@ -13,6 +13,7 @@
   "author": "P'unk Avenue",
   "license": "MIT",
   "dependencies": {
-    "apostrophe": "^2.59.0"
+    "apostrophe": "^2.60.4",
+    "async": "^2.6.1"
   }
 }

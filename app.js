@@ -11,7 +11,13 @@ var apos = require('apostrophe')({
 
     // This one is for children of link pages
       'apostrophe-pages': {},
-
+      'apostrophe-express' : {
+        csrf : {
+          exceptions : ['/my-post-route']
+        }
+      },
+      'contact-form' : {},
+      'contact-form-widgets' : {},
       'link-widgets' : {},
       'page-link-widgets' : {},
       'drawer-widgets' : {},
