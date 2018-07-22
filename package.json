@@ -16,5 +16,17 @@
     "apostrophe": "^2.60.4",
     "apostrophe-workflow": "^2.10.2",
     "async": "^2.6.1"
+  },
+  "nodemonConfig": {
+    "verbose": true,
+    "ignore": [
+      "locales/*.json",
+      "public/modules",
+      "public/uploads",
+      "public/apos-minified",
+      "public/css/master-*.less",
+      "data"
+    ],
+    "ext": "json, js, html, less"
   }
 }
